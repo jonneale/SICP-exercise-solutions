@@ -29,7 +29,9 @@
           (map
            (fn [i]
              (* i i))
-           (rest (sort a))))) 
+           (rest (sort a)))))
+
+(sumofsquares 5 4 6)
 
 ((if true - +) 1 2)
 
