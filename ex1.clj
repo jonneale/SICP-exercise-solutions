@@ -24,7 +24,24 @@
 
 (+ 2 (if (> )))
 
+(defn square
+  [i]
+  (* i i))
+
+(defn sum
+  [xs]
+  (reduce + xs))
+
+(defn sum-of-squares
+  [xs]
+  (sum (map square xs)))
+
+(defn sum-of-2-max
+  [& xs]
+  (sum-of-squares (take 2 (sort > xs))))
+
 (defn sumofsquares [& a]
+  (sort > a)
   (reduce +
           (map
            (fn [i]
