@@ -84,8 +84,9 @@
 
 (defn good-enough?
   [guess prev-guess]
-  (< (Math/abs (- prev-guess
+  (< (/ (Math/abs (- prev-guess
                   guess))
+        guess)
      0.001))
 
 (defn average
