@@ -28,6 +28,12 @@
       b
       (plus (dec a) (inc b))))
       
+(defn plus 
+  [a b]
+  (if (= a 0)
+      b
+      (recur (dec a) (inc b))))
+      
 ;;(plus 4 5)
 ;;(plus 3 6)
 ;;(plus 2 7)
@@ -76,7 +82,7 @@
 
 ;; (A 0 n) -> returns 2n
 ;; (A 1 n) -> returns 2^n
-;; (A 2 n) -> returns 2^(2^n)
+;; (A 2 n) -> returns 2^(2^^n)
 
 
 
