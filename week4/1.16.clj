@@ -22,3 +22,17 @@
                   (even? n) (iter-expt (square b) (/ n 2) product)
                   :else (iter-expt b (- n 1) (* b product))))
       (iter-expt b n 1))
+
+      
+(defn faster-expt 
+      ([b n product]
+      (defn square
+            [x]
+            (* x x))
+      (cond 
+            (= n 0) product
+            (even? n) (iter-expt (square b) (/ n 2) product)
+            :else (recur b (- n 1) (* b product))))
+      ([b n]
+      (faster-exp b n 1)))
+      

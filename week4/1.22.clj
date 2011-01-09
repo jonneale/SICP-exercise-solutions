@@ -41,9 +41,9 @@
     (cond (= (count prime-list) n)
           prime-list
           (prime? x)
-          (find-primes-iter n (next x) (conj prime-list x))
+          (recur n (next x) (conj prime-list x))
           :else
-          (find-primes-iter n (next x) prime-list)))
+          (recur n (next x) prime-list)))
     
 (defn find-n-smallest-primes-greater-than-x
       [n x]
