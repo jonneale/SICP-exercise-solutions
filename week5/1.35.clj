@@ -13,9 +13,7 @@
                 (test next))))
     (test first-guess))
     
-(defn cos
-  [x]
-  (Math/cos x))
+    
   
 (fixed-point (fn[x] (+ 1 (/ 1 x))) 1.0)
 ;; 1.6180327868852458
