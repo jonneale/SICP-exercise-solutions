@@ -19,3 +19,5 @@
   ; 7
   ; user=> ((repeated inc 8) 1)
   ; 9
+  ; user=> ((repeated square 2) 5)
+  ;   625
