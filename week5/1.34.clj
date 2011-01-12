@@ -8,4 +8,4 @@
 ;; => 6
 ;; 
 ;; (f f)
-;; Fails because we try to call (f (f (2))) which, in turn, calls (f (f (2 2))) fails because 2 is not an expression, and therefore cannot be evaluated
+;; Fails because we try to call (f (2)) which, in turn, calls (2 2) fails because 2 is not a function, and therefore cannot be evaluated

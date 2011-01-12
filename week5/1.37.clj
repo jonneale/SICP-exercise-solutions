@@ -3,21 +3,20 @@
 ; (cont-frac (lambda (i) 1.0) (lambda (i) 1.0) k) 
 ; for successive values of k. How large must you make k in order to get an approximation that is accurate to
 ; 4 decimal places?
-(defn cont-frac-iter
-  [n d k i sum]
-  (cond (= i 1)
-        (/ (n i)
-           sum)
-        (= i k)
-          (recur n d k (- i 1) (/ (n k)
-                                  (d k)))
-        :else
-          (recur n d k (- i 1) (+ (d (- i 1))
-                                     (/ (n i)
-                                         sum)))))
 (defn cont-frac
-  [n d k]
-  (cont-frac-iter n d k k 0))
+  ([n d k]
+    (cont-frac n d k k 0))
+  ([n d k i sum]
+    (cond (= i 1)
+          (/ (n i)
+             sum)
+          (= i k)
+            (recur n d k (- i 1) (/ (n k)
+                                    (d k)))
+          :else
+            (recur n d k (- i 1) (+ (d (- i 1))
+                                       (/ (n i)
+                                           sum))))))
   
   ; user=> (/ 1 (cont-frac (fn[i] 1.0) (fn[i] 1.0) 12))
   ; 1.6179775280898876

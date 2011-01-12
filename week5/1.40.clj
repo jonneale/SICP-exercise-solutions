@@ -10,14 +10,14 @@
 
 (defn deriv
   [g]
-  (fn[x] (/ (- (g (+ x 
+  (fn[x] (/ (- (g (+ x
                      dx))
                (g x))
             dx)))
 
 (defn newton-transform
   [g]
-  (fn[x] (- x 
+  (fn[x] (- x
             (/ (g x)
                ((deriv g) x)))))
 

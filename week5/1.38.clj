@@ -18,7 +18,7 @@
   [n d k]
   (cont-frac-iter n d k k 0))
 
-;; if remainder x/3 = 0 then return x/3*2, else return 1
+;; if remainder x+1/3 = 0 then return (x/3)*2, else return 1
 (defn eulers-function
   [x]
   (cond (= 0
