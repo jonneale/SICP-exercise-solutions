@@ -51,3 +51,6 @@
   [n]
   ((n inc) 0))
 
+
+                                        ;church functions work by applying a function n times to an argument
+
